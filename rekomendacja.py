@@ -1,4 +1,4 @@
-#  Wzorowane na przykładzie Rona Zacharskiego
+#  Wzorowane na przyk??adzie Rona Zacharskiego
 #
 
 from math import sqrt
@@ -16,32 +16,44 @@ users = {"Ania": {"Blues Traveler": 3.5, "Broken Bells": 2.0, "Norah Jones": 4.5
 
 
 def manhattan(rating1, rating2):
-    """Oblicz odległość w metryce taksówkowej między dwoma  zbiorami ocen
+    """Oblicz odleg??o???? w metryce taks??wkowej mi??dzy dwoma  zbiorami ocen
        danymi w postaci: {'The Strokes': 3.0, 'Slightly Stoopid': 2.5}
-       Zwróć -1, gdy zbiory nie mają wspólnych elementów"""
-       
+       Zwr???? -1, gdy zbiory nie maj?? wsp??lnych element??w"""
+    print (rating1)
     # TODO: wpisz kod
-    pass
+    klucze1=rating1.keys()
+    klucze2=rating2.keys(),
+    odleglosc = 0
+    for klucz in klucze1:
+        if klucz in rating2.keys():
+            # print (rating2[klucz])
+            odleglosc = odleglosc +abs(rating2[klucz]-rating1[klucz])
+        else:
+            print(-1)
+        pass
+    return odleglosc
 
+odlegloscODAniDoHeli = manhattan(users ["Ania"], users ["Hela"])
+print ("OD Ani do Heli jest %f" % odlegloscODAniDoHeli )
 
 def computeNearestNeighbor(username, users):
-    """dla danego użytkownika, zwróć listę innych użytkowników według bliskości preferencji"""
+    """dla danego u??ytkownika, zwr???? list?? innych u??ytkownik??w wed??ug blisko??ci preferencji"""
     distances = []
     # TODO: wpisz kod
     return distances
 
 def recommend(username, users):
-    """Zwróć listę rekomendacji dla użytkownika"""
-    # znajdź preferencje najbliższego sąsiada
-    nearest = computeNearestNeighbor(username, users)[0][1]
+    """Zwr???? list?? rekomendacji dla u??ytkownika"""
+    # znajd?? preferencje najbli??szego s??siada
+    # nearest = computeNearestNeighbor(username, users)[0][1]
 
-    recommendations = []
-    # zarekomenduj użytkownikowi wykonawcę, którego jeszcze nie ocenił, a zrobił to jego najbliższy sąsiada
+    # recommendations = []
+    # zarekomenduj u??ytkownikowi wykonawc??, kt??rego jeszcze nie oceni??, a zrobi?? to jego najbli??szy s??siada
     # TODO: wpisz kod
     # using the fn sorted for variety - sort is more efficient
-    return sorted(recommendations, key=lambda artistTuple: artistTuple[1], reverse = True)
+    # return sorted(recommendations, key=lambda artistTuple: artistTuple[1], reverse = True)
 
-# przykłady
+# przyk??ady
 
 print( recommend('Hela', users))
 #print( recommend('Celina', users))
